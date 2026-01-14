@@ -14,15 +14,15 @@ object NetworkModule {
 
     @Provides
     fun provideLampService() : LampService {
-        val logging = HttpLoggingInterceptor()
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY)
-        val httpClient = OkHttpClient.Builder()
-        httpClient.addInterceptor(logging)
+        //val logging = HttpLoggingInterceptor()
+        //logging.setLevel(HttpLoggingInterceptor.Level.BODY)
+        //val httpClient = OkHttpClient.Builder()
+        //httpClient.addInterceptor(logging)
 
          return Retrofit.Builder()
                 .baseUrl("http://195.133.53.179:1337/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(httpClient.build())
+                //.client(httpClient.build())
                 .build()
                 .create()
     }
